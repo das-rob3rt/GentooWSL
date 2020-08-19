@@ -1,0 +1,8 @@
+*.tar
+*.tar.gz
+*.exe
+*.vhdx
+GentooWSL
+out
+.git
+.docker_temp*
