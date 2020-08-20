@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 distro_name="GentooWSL"
 image_name="gentoowsl-rootfs:local"
@@ -6,6 +6,7 @@ image_name="gentoowsl-rootfs:local"
 echo
 echo "[*] Baking $distro_name rootfs tarball"
 docker build -t $image_name . || exit $?
+
 container_name=$(docker create $image_name || exit $?)
 docker export $container_name --output rootfs.tar || exit $?
 docker rm $container_name || exit $?

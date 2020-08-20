@@ -1,4 +1,5 @@
-#! /bin/bash
+#!/bin/bash
+pushd /root > /dev/null
 
 distro_name="GentooWSL"
 
@@ -36,8 +37,7 @@ passwd $wsl_username || exit $?
 groupadd docker || exit $?
 usermod -aG docker $wsl_username || exit $?
 
-mv -f .bashrc~ .bashrc || exit $?
-rm -f post-install.sh || exit $?
+rm -f .bashrc post-install.sh || exit $?
 
 echo
-source .bashrc
+popd > /dev/null
