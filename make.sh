@@ -23,4 +23,4 @@ curl -L https://github.com/yuk7/wsldl/releases/download/20040300/Launcher.exe \
 
 echo
 echo -n "[*] Packaging for publish... "
-tar -cf out/$distro_name-release.tar $distro_name && echo "done!" || exit $?
+tar -cf out/$distro_name-release-$(date +%Y%m%d).tar $distro_name && echo "done!" || exit $?
