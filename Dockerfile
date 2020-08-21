@@ -7,4 +7,5 @@ RUN emerge -q mirrorselect gentoolkit sudo vim && eclean -dq packages && eclean 
 
 WORKDIR /root
 COPY ./post-install.sh /root/post-install.sh
-RUN cp /etc/skel/.bashrc . && echo "source /root/post-install.sh" >> .bashrc
+RUN cp -f /etc/skel/.bash* . && cp .bashrc .bashrc~ && \
+echo "source /root/post-install.sh" >> .bashrc

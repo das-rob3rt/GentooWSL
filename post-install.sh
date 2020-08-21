@@ -37,7 +37,8 @@ passwd $wsl_username || exit $?
 groupadd docker || exit $?
 usermod -aG docker $wsl_username || exit $?
 
-rm -f .bashrc post-install.sh || exit $?
+mv -f .bashrc~ .bashrc || exit $?
+rm -f post-install.sh || exit $?
 
 echo
 popd > /dev/null
